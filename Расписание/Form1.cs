@@ -16,6 +16,25 @@ namespace Расписание
         public Form1()
         {
             InitializeComponent();
+            for (int i = 1; i < 32; i++)
+                comboBox1.Items.Add(i.ToString());
+            comboBox2.Items.Add("Январь");
+            comboBox2.Items.Add("Февраль");
+            comboBox2.Items.Add("Март");
+            comboBox2.Items.Add("Апрель");
+            comboBox2.Items.Add("Май");
+            comboBox2.Items.Add("Июнь");
+            comboBox2.Items.Add("Июль");
+            comboBox2.Items.Add("Август");
+            comboBox2.Items.Add("Сентябрь");
+            comboBox2.Items.Add("Октябрь");
+            comboBox2.Items.Add("Ноябрь");
+            comboBox2.Items.Add("Декабрь");
+            
+            for (int i = 2022; i < 2030; i++)
+                comboBox3.Items.Add(i.ToString());
+            comboBox4.Items.Add(4.ToString());
+            comboBox4.Items.Add(8.ToString());
         }
         public class Data
         {
@@ -49,12 +68,8 @@ namespace Расписание
         {
 
         }
-        private void Form1_Load()
-        {
-            for (int i=1;i<32;i++)
-            comboBox1.Items.Add(i.ToString());
-
-        }
+           
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -64,19 +79,43 @@ namespace Расписание
         {
 
 
-            //Pass the filepath and filename to the StreamWriter Constructor
-            StreamWriter sw = new StreamWriter("C:\\txt.txt");
-            //Write a line of text
-            sw.WriteLine(comboBox1.Text);
-            sw.WriteLine(comboBox2.Text);
-            sw.WriteLine(comboBox3.Text);
-            sw.WriteLine(comboBox4.Text);
-            //Write a second line of text
-            sw.WriteLine("From the StreamWriter class");
-            //Close the file
-            sw.Close();
+            StreamWriter wr = new StreamWriter("texts\\txt.txt", true);
+            string line = comboBox1.Text +" "+ comboBox2.Text + " " + comboBox3.Text + " " + comboBox4.Text+"\n";
+            wr.Write(line);
+            wr.Close();
+        }
 
+     
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Pass the file path and file name to the StreamReader constructor
+            StreamReader sr = new StreamReader("texts\\txt.txt");
+            //Read the first line of text
+            string line = sr.ReadLine();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Day");
+            dt.Columns.Add("Month");
+            dt.Columns.Add("Year");
+            dt.Columns.Add("Hours");
+            //Continue to read until you reach end of file
+            while (line != "" && line != null)
+            {
+                //write the line to console window
+                string[] words=line.Split();
+                DataRow r = dt.NewRow();
+                r["Day"] = Convert.ToInt32(words[0]);
+                r["Month"] = words[1];
+                r["Year"] = Convert.ToInt32(words[2]);
+                r["Hours"] = words[3];
+                dt.Rows.Add(r);
+                //Read the next line
+                line = sr.ReadLine();
+            }
+            //close the file
+            dataGridView1.DataSource = dt;
+            sr.Close();
+            Console.ReadLine();
         }
     }
 }

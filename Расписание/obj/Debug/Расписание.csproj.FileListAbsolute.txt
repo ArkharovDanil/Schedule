@@ -1,0 +1,11 @@
+C:\Users\USER\source\repos\Расписание\Расписание\bin\Debug\Расписание.exe.config
+C:\Users\USER\source\repos\Расписание\Расписание\bin\Debug\Расписание.exe
+C:\Users\USER\source\repos\Расписание\Расписание\bin\Debug\Расписание.pdb
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.csproj.SuggestedBindingRedirects.cache
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.Form1.resources
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.Properties.Resources.resources
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.exe
+C:\Users\USER\source\repos\Расписание\Расписание\obj\Debug\Расписание.pdb
